@@ -216,7 +216,7 @@ void RAS_DisplayArrayBucket::UpdateActiveMeshSlots(RAS_IRasterizer *rasty)
 		}
 	}
 
-	if (m_mesh && m_mesh->GetModifiedFlag() & RAS_MeshObject::MESH_MODIFIED) {
+	if (m_displayArray && m_displayArray->GetModifiedFlag() & RAS_IDisplayArray::MESH_MODIFIED) {
 		m_meshModified = true;
 	}
 
@@ -228,8 +228,8 @@ void RAS_DisplayArrayBucket::UpdateActiveMeshSlots(RAS_IRasterizer *rasty)
 
 void RAS_DisplayArrayBucket::SetMeshUnmodified()
 {
-	if (m_mesh) {
-		m_mesh->SetModifiedFlag(0);
+	if (m_displayArray) {
+		m_displayArray->SetModifiedFlag(RAS_IDisplayArray::NONE_MODIFIED);
 	}
 }
 
