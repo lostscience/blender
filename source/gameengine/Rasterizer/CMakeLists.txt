@@ -55,6 +55,8 @@ set(SRC
 	RAS_IPolygonMaterial.cpp
 	RAS_InstancingBuffer.cpp
 	RAS_MaterialBucket.cpp
+	RAS_BoundingBox.cpp
+	RAS_BoundingBoxManager.cpp
 	RAS_MeshObject.cpp
 	RAS_MeshSlot.cpp
 	RAS_MeshUser.cpp
@@ -88,6 +90,8 @@ set(SRC
 	RAS_ISync.h
 	RAS_ITexVert.h
 	RAS_MaterialBucket.h
+	RAS_BoundingBox.h
+	RAS_BoundingBoxManager.h
 	RAS_MeshMaterial.h
 	RAS_MeshObject.h
 	RAS_MeshSlot.h
