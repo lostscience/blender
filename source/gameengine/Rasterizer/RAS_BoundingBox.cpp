@@ -28,6 +28,7 @@
 
 #include "RAS_BoundingBox.h"
 #include "RAS_BoundingBoxManager.h"
+#include <algorithm>
 
 RAS_BoundingBox::RAS_BoundingBox(RAS_BoundingBoxManager *manager)
 	:m_modified(false),
