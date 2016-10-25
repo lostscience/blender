@@ -202,7 +202,7 @@ bool SCA_JoystickSensor::Evaluate()
 		}
 			/* test for ball anyone ?*/
 		default:
-			printf("Error invalid switch statement\n");
+			CM_LogicBrickError("invalid switch statement");
 			break;
 	}
 	

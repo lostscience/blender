@@ -518,12 +518,12 @@ RAS_MeshObject* BL_ConvertMesh(Mesh* mesh, Object* blenderobj, KX_Scene* scene, 
 		if (dm->faceData.layers[i].type == CD_MTFACE || dm->faceData.layers[i].type == CD_MCOL)
 		{
 			if (uvLayers > MAX_MTFACE) {
-				printf("%s: corrupted mesh %s - too many CD_MTFACE layers\n", __func__, mesh->id.name);
+				CM_Warning(__func__ << ": corrupted mesh " << mesh->id.name << " - too many CD_MTFACE layers");
 				break;
 			}
 
 			if (colorLayers > MAX_MCOL) {
-				printf("%s: corrupted mesh %s - too many CD_MCOL layers\n", __func__, mesh->id.name);
+				CM_Warning(__func__ << ": corrupted mesh " << mesh->id.name << " - too many CD_MCOL layers");
 				break;
 			}
 

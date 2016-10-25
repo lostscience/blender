@@ -60,6 +60,8 @@
 
 #include "DEV_Joystick.h"
 
+#include "CM_Message.h"
+
 extern "C" {
 #  include "GPU_extensions.h"
 
@@ -440,7 +442,7 @@ int LA_Launcher::PythonEngineNextFrame(void *state)
 	else {
 		int exitcode = launcher->GetExitRequested();
 		if (exitcode) {
-			fprintf(stderr, "Exit code %d: %s\n", exitcode, launcher->GetExitString().ReadPtr());
+			CM_Error("Exit code " << exitcode << ": " << launcher->GetExitString());
 		}
 		return 1;
 	}
@@ -460,7 +462,7 @@ bool LA_Launcher::GetMainLoopPythonCode(char **pythonCode, char **pythonFileName
 	if (*pythonFileName) {
 		*pythonCode = KX_GetPythonCode(m_maggie, *pythonFileName);
 		if (!*pythonCode) {
-			std::cerr << "ERROR: cannot yield control to Python: no Python text data block named '" << *pythonFileName << "'" << std::endl;
+			CM_Error("Cannot yield control to Python: no Python text data block named '" << *pythonFileName << "'");
 			return false;
 		}
 		return true;
